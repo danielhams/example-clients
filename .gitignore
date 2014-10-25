@@ -9,6 +9,7 @@ inprocess.lo
 intime.la
 intime.lo
 jack_impulse_grabber
+jack_large_number_ports
 jack_latent_client
 jack_metro
 jack_midiseq
@@ -19,6 +20,7 @@ jack_showtime
 jack_simple_client
 jack_simple_session_client
 jack_transport_client
+jack_large_number_ports.o
 latent_client.o
 metro.o
 midiseq.o
