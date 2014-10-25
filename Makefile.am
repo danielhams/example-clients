@@ -22,6 +22,7 @@ bin_PROGRAMS = jack_simple_client \
 	       jack_midiseq \
 	       jack_latent_client \
 	       jack_server_control \
+	       jack_large_number_ports \
 	       $(JACKREC)
 
 if HAVE_SNDFILE
@@ -30,7 +31,7 @@ sndfile_cflags = @SNDFILE_CFLAGS@
 endif
 
 AM_CFLAGS = -I.. $(JACK_CFLAGS) $(sndfile_cflags)
-AM_CXXFLAGS = -I.. $(JACK_CFLAGS) $(sndfile_cflags)
+AM_CXXFLAGS = -I.. $(JACK_CPPFLAGS) $(sndfile_cflags)
 
 jack_simple_client_SOURCES = simple_client.c
 jack_simple_client_LDFLAGS = @OS_LDFLAGS@
@@ -71,6 +72,10 @@ jack_latent_client_LDADD = $(top_builddir)/libjack/libjack.la
 jack_server_control_SOURCES = server_control.c
 jack_server_control_LDFLAGS = @OS_LDFLAGS@
 jack_server_control_LDADD = $(top_builddir)/jackd/libjackserver.la
+
+jack_large_number_ports_SOURCES = jack_large_number_ports.cpp
+jack_large_number_ports_LDFLAGS = @OS_LDFLAGS@ $(JACK_LDFLAGS)
+jack_large_number_ports_LDADD = $(top_builddir)/libjackpp/libjackpp.la
 
 if HAVE_SNDFILE
 jack_rec_SOURCES = capture_client.c
