@@ -64,12 +64,11 @@ void jack_shutdown (void *arg)
 
 int main (int argc, char *argv[])
 {
-    const char **ports;
     const char *client_name = "jack_large_number_ports";
     const char *server_name = NULL;
     jack_options_t options = JackNullOption;
     jack_status_t status;
-	
+
     /* open a client connection to the JACK server */
     jack_client = jack_client_open( client_name, options, &status, server_name );
 
