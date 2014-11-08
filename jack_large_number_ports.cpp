@@ -7,6 +7,8 @@
  * jack server.
  */
 
+#define __STDC_FORMAT_MACROS
+
 #include <string>
 #include <vector>
 #include <memory>
